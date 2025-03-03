@@ -18,7 +18,7 @@ export default function Login({ status, canResetPassword }) {
 
     useEffect(() => {
         return () => {
-            reset('password');
+            reset('passworduuuu');
         };
     }, []);
 
@@ -42,6 +42,7 @@ export default function Login({ status, canResetPassword }) {
                         id="email"
                         type="email"
                         name="email"
+                        placeholder=""
                         value={data.email}
                         className="mt-1 block w-full"
                         autoComplete="username"

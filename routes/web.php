@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -29,9 +30,20 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/home', function () {
+Route::get('/users', function () {
     return Inertia::render('Employee');
 })->middleware(['auth', 'verified'])->name('home');
+
+Route::get('/bookings', function () {
+    return Inertia::render('Bookings');
+})->middleware(['auth', 'verified'])->name('bookings');
+
+Route::get('/reporting', function () {
+    return Inertia::render('Reporting');
+})->middleware(['auth', 'verified'])->name('reporting');
+
+Route::get('/verify-otp', [OtpController::class, 'show'])->name('otp.verify');
+Route::post('/verify-otp', [OtpController::class, 'verify'])->name('otp.verify.post');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
