@@ -28,8 +28,21 @@ export default function Authenticated({ user, header, children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink href={route('home')} active={route().current('home')}>
-                                    Employees
+                                    Users
                                 </NavLink>
+
+                                <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink href={route('bookings')} active={route().current('bookings')}>
+                                    Bookings
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink href={route('reporting')} active={route().current('reporting')}>
+                                    Reporting
+                                </NavLink>
+                            </div>
+
                             </div>
                         </div>
 

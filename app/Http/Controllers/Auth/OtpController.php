@@ -5,15 +5,18 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+
+//use Inertia\Inertia;
 
 class OtpController extends Controller
 {
     // Show the OTP verification page
     public function show()
     {
+
         //return view('otp'); // Ensure this Blade file exists OR return JSON if using React
-        return Inertia::render("Auth/VerifyOTP");
+        return view('otpVerify');
+        //return Inertia::render("Auth/VerifyOTP");
     }
 
     public function verify(Request $request)
